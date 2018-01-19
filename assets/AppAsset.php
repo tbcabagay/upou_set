@@ -21,8 +21,13 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
+		'css/light-bootstrap-dashboard.css',
+		'css/animate.min.css',
+        'css/pe-icon-7-stroke.css',
+        'http://fonts.googleapis.com/css?family=Roboto',
     ];
     public $js = [
+        'js/main.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
