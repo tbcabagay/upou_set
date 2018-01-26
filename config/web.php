@@ -2,6 +2,8 @@
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
+$dbReg = require __DIR__ . '/db_reg.php';
+$dbStdrec = require __DIR__ . '/db_stdrec.php';
 
 $config = [
     'id' => 'basic',
@@ -21,6 +23,10 @@ $config = [
         ],
         'user' => [
             'identityClass' => 'app\models\User',
+            'enableAutoLogin' => true,
+        ],
+        'student' => [
+            'identityClass' => 'app\models\registration\Students',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
@@ -43,14 +49,14 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
+        'dbReg' => $dbReg,
+        'dbStdrec' => $dbStdrec,
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
-        */
     ],
     'params' => $params,
 ];

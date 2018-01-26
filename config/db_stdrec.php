@@ -2,9 +2,9 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=upou_set',
-    'username' => 'root',
-    'password' => 'g3tsug4T3nsh0u',
+    'dsn' => 'mysql:host=192.168.100.3;dbname=stdrec',
+    'username' => 'ictdo',
+    'password' => 'XugVG5LTV9QwV4BH',
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)
