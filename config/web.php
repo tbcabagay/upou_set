@@ -25,7 +25,8 @@ $config = [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
         ],
-        'student' => [
+        'userRegistration' => [
+            'class' => 'yii\web\User',
             'identityClass' => 'app\models\registration\Students',
             'enableAutoLogin' => true,
         ],

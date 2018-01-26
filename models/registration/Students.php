@@ -81,7 +81,7 @@ use Yii;
  * @property string $oldstudid
  * @property string $newstudid
  */
-class Students extends \yii\db\ActiveRecord
+class Students extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
     /**
      * @inheritdoc
@@ -208,5 +208,42 @@ class Students extends \yii\db\ActiveRecord
             'oldstudid' => Yii::t('app', 'Oldstudid'),
             'newstudid' => Yii::t('app', 'Newstudid'),
         ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public static function findIdentity($id)
+    {
+        return static::findOne($id);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public static function findIdentityByAccessToken($token, $type = null)
+    {
+        return static::findOne(['access_token' => $token]);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getAuthKey()
+    {
+        return $this->authKey;
+    }
+
+    public function validateAuthKey($authKey)
+    {
+        return $this->authKey === $authKey;
     }
 }
